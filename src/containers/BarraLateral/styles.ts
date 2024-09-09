@@ -19,4 +19,5 @@ export const Campo = styled.input`
   font-weight: bold;
   color: #666666;
   border-color: #666666;
+  width: 100%;
 `
