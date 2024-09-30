@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import Lista from '../../components/Lista'
-import { ContainerMain, Resultado } from './styles'
+import { MainContainer, Titulo } from '../../styles'
 
 import { RootReducer } from '../../store'
 
@@ -15,7 +15,7 @@ const ListaContatos = () => {
     let tarefasFiltradas = itens
     if (termo !== undefined) {
       tarefasFiltradas = tarefasFiltradas.filter(
-        (item) => item.titulo.toLowerCase().search(termo.toLowerCase()) >= 0
+        (item) => item.nome.toLowerCase().search(termo.toLowerCase()) >= 0
       )
 
       if (criterio === 'prioridade') {
@@ -38,9 +38,9 @@ const ListaContatos = () => {
     const complementacao =
       termo !== undefined && termo.length > 0 ? ` e "${termo}"` : ''
     if (criterio === 'todas') {
-      mensagem = `${quantidade} tarefa(s) encontrada(s) como: todas ${complementacao}`
+      mensagem = `${quantidade} contato(s) encontrada(s) como: todas ${complementacao}`
     } else {
-      mensagem = `${quantidade} tarefa(s) encontrada(s) como: "${`${criterio}=${valor}`}" ${complementacao}`
+      mensagem = `${quantidade} contato(s) encontrada(s) como: "${`${criterio}=${valor}`}" ${complementacao}`
     }
 
     return mensagem
@@ -50,22 +50,23 @@ const ListaContatos = () => {
   const mensagem = exibeResultadoFiltragem(tarefas.length)
 
   return (
-    <ContainerMain>
-      <Resultado>{mensagem}</Resultado>
+    <MainContainer>
+      <Titulo as="p">{mensagem}</Titulo>
       <ul>
         {tarefas.map((t) => (
-          <li key={t.titulo}>
+          <li key={t.nome}>
             <Lista
               id={t.id}
-              descricao={t.descricao}
-              titulo={t.titulo}
+              telefone={t.telefone}
+              email={t.email}
+              nome={t.nome}
               status={t.status}
               prioridade={t.prioridade}
             />
           </li>
         ))}
       </ul>
-    </ContainerMain>
+    </MainContainer>
   )
 }
 

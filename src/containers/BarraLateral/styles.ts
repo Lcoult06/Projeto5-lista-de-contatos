@@ -8,26 +8,19 @@ export const Aside = styled.aside`
 
 export const Filtros = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  // grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
   margin-top: 16px;
 `
 
-export const Campo = styled.input`
-  background-color: #000;
-  width: 100%;
-  height: 30px;
-  padding: 8px;
-  color: #fff;
-  border-radius: 16px;
-
-  &::placeholder {
-    color: #fff;
-  }
-  background-color: #fff;
-  border-radius: 8px;
+export const Botao = styled.button`
   font-weight: bold;
-  color: #666666;
-  border-color: #666666;
-  width: 100%;
+  font-size: 12px;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #2f3640;
+  border-radius: 8px;
+  margin-right: 8px;
 `

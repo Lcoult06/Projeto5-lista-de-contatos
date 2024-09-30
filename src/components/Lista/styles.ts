@@ -27,12 +27,17 @@ export const Card = styled.div`
   padding: 16px;
   margin-bottom: 32px;
   border-radius: 8px;
+
+  label {
+    display: inline;
+    align-items: center;
+  }
 `
 
 export const Titulo = styled.h3`
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 16px;
+  margin: 32px 0;
   color: #fff;
 `
 
@@ -43,16 +48,33 @@ export const Tag = styled.span<TagProps>`
   font-size: 10px;
   background-color: ${(props) => retornaCorDeFundo(props)};
   border-radius: 8px;
-  margin-right: 16px;
+  margin-left: 8px;
   display: inline-block;
 `
 
-export const Descricao = styled.textarea`
+export const Info = styled.label`
+  color: #fff;
+  font-weight: bold;
+`
+
+export const Telefone = styled.input`
   color: #fff;
   font-size: 14px;
   line-height: 24px;
   font-family: 'Roboto Mono', monospace;
-  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  resize: none;
+  border: none;
+  background-color: transparent;
+`
+
+export const Email = styled.input`
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: 'Roboto Mono', monospace;
   width: 100%;
   margin-bottom: 16px;
   margin-top: 16px;
